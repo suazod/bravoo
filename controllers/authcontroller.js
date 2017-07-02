@@ -1,5 +1,10 @@
 var exports = module.exports = {}
 
+exports.main = function(req, res) {
+
+    res.render('main');
+
+}
 
 exports.signup = function(req, res) {
 

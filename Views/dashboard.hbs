@@ -1,11 +1,158 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Passport with Sequelize</title>
+	<title>Bravoo App</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/foundation.css">
+	<link rel="stylesheet" href="/assets/css/app.css">
+	<link rel="stylesheet" href="/assets/css/student_dashboard.css">
 </head>
 <body>
-<h2>Dashboard</h2>
-<h5>Hurray! you are logged in.</h5>
+			<div class="app-dashboard shrink-medium">
+		<div class="row expanded app-dashboard-top-nav-bar">
+			<div class="columns medium-2">
+				<button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+				<a href="index.html" class="app-dashboard-logo">Hello, Guardian!</a>
+			</div>
+			<div class="columns shrink app-dashboard-top-bar-actions">
+				<a href="/logout" class="button login-btm back-to-home"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+			</div>
+		</div>
+
+		<div class="app-dashboard-body off-canvas-wrapper">
+			<div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+				<div class="app-dashboard-sidebar-title-area">
+					<div class="app-dashboard-close-sidebar">
+						<h3 class="app-dashboard-sidebar-block-title">Menu</h3>
+						<!-- Close button -->
+						<button id="close-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-sidebar-close-button show-for-medium" aria-label="Close menu" type="button">
+							<span aria-hidden="true"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+						</button>
+					</div>
+					<div class="app-dashboard-open-sidebar">
+						<button id="open-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-open-sidebar-button show-for-medium" aria-label="open menu" type="button">
+							<span aria-hidden="true"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></span>
+						</button>
+					</div>
+				</div>
+				<div class="app-dashboard-sidebar-inner">
+					<ul class="menu vertical">
+						<li><a href="#" class="is-active">
+							<i class="fa fa-plus fa-2x" aria-hidden="true"></i><span class="app-dashboard-sidebar-text"><br>Assignment</span>
+						</a></li>
+						<li><a>
+							<i class="fa fa-pencil fa-2x" aria-hidden="true"></i><span class="app-dashboard-sidebar-text"><br>Update</span>
+						</a></li>
+						<li><a>
+							<i class="fa fa-trash fa-2x" aria-hidden="true"></i><span class="app-dashboard-sidebar-text"><br>Remove</span>
+						</a></li>
+						<li><a href="#" class="is-active">
+							<i class="fa fa-cogs fa-2x" aria-hidden="true"></i><span class="app-dashboard-sidebar-text"><br>Settings</span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
+
+			<div class="row">
+				<div class="large-11 columns">
+
+
+				<div class="reminder-btm"><button type="button" class="success hollow button">Send reminder</button></div>
+				<h3 class="text-center">Guardian Dashboard</h3>
+
+				<table id="assigment_table" class="hover unstriped stack">
+		<thead>
+			<tr>
+				<th width="200">Assigment</th>
+				<th>Description</th>
+				<th width="150">Mark Complete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Math</td>
+				<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+				<td class="completion">
+					<div class="switch success">
+						<input class="switch-input" id="successSwitch1" type="checkbox" name="successSwitch">
+						<label class="switch-paddle" for="successSwitch1">
+							<span class="show-for-sr">Success Switch</span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Science</td>
+				<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+				<td class="completion">
+					<div class="switch success">
+						<input class="switch-input" id="successSwitch2" type="checkbox" name="successSwitch">
+						<label class="switch-paddle" for="successSwitch2">
+							<span class="show-for-sr">Success Switch</span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Reading</td>
+				<td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+				<td class="completion">
+					<div class="switch success">
+						<input class="switch-input" id="successSwitch3" type="checkbox" name="successSwitch">
+						<label class="switch-paddle" for="successSwitch3">
+							<span class="show-for-sr">Success Switch</span>
+						</label>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		</div>
+
+		<div class="large-1 columns status-bar">
+		<div class="rocket-wrap"><span class="rocket"><i class="fa fa-rocket" aria-hidden="true"></i></span></div>
+		<div class="slider vertical " data-slider data-initial-start="50" data-end="100" data-vertical="true">
+		<span class="slider-handle" data-slider-handle role="slider" tabindex="1"><i class="fa fa-grav" aria-hidden="true"></i></span>
+		<span class="slider-fill" data-slider-fill></span>
+		<input type="hidden">
+		</div>
+
+		</div>
+		</div>
+
+
+
+
+
+			</div>
+
+
+
+		</div>
+		</div>
+
+	<script src="/assets/js/vendor/jquery.js"></script>
+	<script src="/assets/js/vendor/what-input.js"></script>
+	<script src="/assets/js/vendor/foundation.js"></script>
+	<script src="/assets/js/app.js"></script>
+
+	<script>
+	$('[data-app-dashboard-toggle-shrink]').on('click', function(e) {
+		e.preventDefault();
+		$(this).parents('.app-dashboard').toggleClass('shrink-medium').toggleClass('shrink-large');
+	});
+
+
+
+
+	$('[data-toggle-menu]').on("click", function(){
+		$("#overlay-nav-menu").toggleClass("is-open");
+	});
+
+	</script>
 
 </body>
 </html>

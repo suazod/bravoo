@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
-    <title></title>
+  <title>Bravoo App</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/foundation.css">
+  <link rel="stylesheet" href="/assets/css/student_dashboard.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
 </head>
- 
+
 <body>
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
-    </form>
- 
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+      <span class="app-dashboard-logo">Welcome to Bravoo!</span>
+    </div>
+    <div class="columns shrink app-dashboard-top-bar-actions">
+      <a href="/" class="button login-btm back-to-home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home </a>
+    </div>
+  </div>
+
+
+  <h2 class="text-center">Register</h2>
+  <div class="container form-wrapper">
+    <div class="row large-4 large-centered columns">
+
+<form id="signin" name="signin" method="post" action="signin" class="log-in-form">
+  <h4 class="text-center">Log in with you email account</h4>
+
+  <div class="input-group">
+    <span class="input-group-label"><i class="fa fa-user"></i></span>
+    <input type="email" class="text input-group-field" name="email" placeholder="somebody@example.com">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-label"><i class="fa fa-key"></i></span>
+    <input type="password" class="text input-group-field" name="password" type="password" placeholder="Password">
+  </div>
+
+  <p><input type="submit" class="button expanded" value="Log in"></input></p>
+
+
+
+
+</form>
+</div>
+
+<script src="/assets/js/vendor/jquery.js"></script>
+<script src="/assets/js/vendor/what-input.js"></script>
+<script src="/assets/js/vendor/foundation.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
- 
+
 </html>
