@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html>
- 
 <head>
-    <title></title>
+    <title>Bravoo App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/student_dashboard.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
 </head>
- 
+
 <body>
-    <form id="signup" name="signup" method="post" action="/signup">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
-        <label for="firstname">Firstname</label>
-        <input name="firstname" type="text" />
-        <label for="lastname">Lastname</label>
-        <input name="lastname" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
-    </form>
- 
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+      <span class="app-dashboard-logo">Welcome to Bravoo!</span>
+    </div>
+    <div class="columns shrink app-dashboard-top-bar-actions">
+      <a href="/" class="button login-btm back-to-home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home </a>
+    </div>
+  </div>
+
+    <h2 class="text-center">Register</h2>
+    <div class="container form-wrapper">
+    	<div class="row large-6 large-centered columns">
+    		<form action="/signup" class="log-in-form" id="signup" method="post" name="signup">
+    			<div class="row">
+    				<div class="large-12 large-centered columns">
+    					<fieldset class="fieldset">
+    						<legend>Guardian Information</legend> <label for="firstname">First Name
+                  <input id="name" name="firstname" placeholder="First Name" type="text"></label>
+                  <label for="lastname">Last Name
+                    <input id="name" name="lastname" placeholder="Last Name" type="text"></label>
+                  <label for="email">Email
+                  <input id="email" name="email" placeholder="somebody@example.com" type="email"></label>
+                  <label for="password">Create Password
+                    <input id="password" name="password" placeholder="New Password" type="password"></label>
+    					</fieldset>
+    				</div>
+    				<!--div class="large-6 columns">
+    					<fieldset class="fieldset">
+    						<legend>Student Information</legend> <label for="firstname">First Name <input id="name" name="firstname" placeholder="First Name" type="text"></label> <label for="lastname">Last Name <input id="name" name="lastname" placeholder="Last Name" type="text"></label> <label for="email">Email
+                  <input id="email" name="email" placeholder="somebody@example.com" type="email"></label> <label for="email">Create Username <input id="email" name="username" placeholder="jdoe" type="text"></label> <label for="password">Create Password <input id="password" name="password" placeholder="New Password" type="password"></label>
+    					</fieldset>
+    				</div-->
+    			</div>
+          <div class="row">
+            <div class="large-4 large-centered columns">
+              <input class="button expanded btn" type="submit" value="Sign Up">
+            </div>
+          </div>
+    		</form>
+    	</div>
+    </div>
 </body>
- 
+
 </html>

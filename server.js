@@ -21,10 +21,20 @@ app.use(passport.session()); // persistent login sessions
 //     res.send('Welcome to Passport with Sequelize');
 // });
 
-// index route loads view.html
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+app.use(express.static(__dirname + "/public"));
+
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./views/index.html"));
+  res.render("index");
 });
+
+// index route loads view.html
+//app.get("/", function(req, res) {
+    //res.sendFile(path.join(__dirname, "./views/index.html"));
+//});
 
 //Sync Database
 models.sequelize.sync({ force: true }).then(function() {
