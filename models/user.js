@@ -11,7 +11,6 @@ module.exports = function(sequelize, Sequelize) {
             notEmpty: true
         },
 
-
         lastname: {
             type: Sequelize.STRING,
             notEmpty: true
@@ -30,6 +29,11 @@ module.exports = function(sequelize, Sequelize) {
             validate: {
                 isEmail: true
             }
+        },
+
+        student_id: {
+            type: Sequelize.STRING,
+            notEmpty: true
         },
 
         password: {

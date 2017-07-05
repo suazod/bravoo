@@ -10,19 +10,16 @@
 </head>
 
 <body>
-  <div class="row expanded app-dashboard-top-nav-bar">
-    <div class="columns medium-2">
-      <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
-      <span class="app-dashboard-logo">Welcome to Bravoo!</span>
-    </div>
-    <div class="columns shrink app-dashboard-top-bar-actions">
-      <a href="/" class="button login-btm back-to-home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home </a>
-    </div>
-  </div>
+  <nav role="navigation">
+      <div class="buttons-wrap">
+        <span class="app-dashboard-logo">Welcome to Bravoo!</span>
+        <a href="/" class="button login-btm back-to-home back"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home </a>
+      </div>
+  </nav>
 
     <h2 class="text-center">Register</h2>
     <div class="container form-wrapper">
-    	<div class="row large-6 large-centered columns">
+    	<div class="row large-4 large-centered columns">
     		<form action="/signup" class="log-in-form" id="signup" method="post" name="signup">
     			<div class="row">
     				<div class="large-12 large-centered columns">
@@ -33,6 +30,8 @@
                     <input id="name" name="lastname" placeholder="Last Name" type="text"></label>
                   <label for="email">Email
                   <input id="email" name="email" placeholder="somebody@example.com" type="email"></label>
+                  <label for="student_id">Student ID
+                  <input id="student_id" name="student_id" placeholder="Student ID" type="text"></label>
                   <label for="password">Create Password
                     <input id="password" name="password" placeholder="New Password" type="password"></label>
     					</fieldset>
@@ -51,6 +50,11 @@
           </div>
     		</form>
     	</div>
+    </div>
+
+    <!-- floating austronaut -->
+    <div class="aus-home">
+      <img src="/assets/img/aust.png" alt="aust.png" width="130"/>
     </div>
 </body>
 
