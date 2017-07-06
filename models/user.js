@@ -31,7 +31,7 @@ module.exports = function(sequelize, Sequelize) {
             }
         },
 
-        student_id: {
+        phone: {
             type: Sequelize.STRING,
             notEmpty: true
         },
