@@ -11,7 +11,7 @@ var exphbs = require('express-handlebars');
 
 var twilio = require('twilio');
 
-var port = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 // var accountSid = '';
 // var authToken = '';
@@ -47,16 +47,16 @@ app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
-  res.render("index");
+    res.render("index");
 });
 
 // index route loads view.html
 //app.get("/", function(req, res) {
-    //res.sendFile(path.join(__dirname, "./views/index.html"));
+//res.sendFile(path.join(__dirname, "./views/index.html"));
 //});
 
 //Sync Database
-models.sequelize.sync({ force: true }).then(function() {
+models.sequelize.sync({ force: false }).then(function() {
 
     console.log('Nice! Database looks fine')
 
@@ -88,7 +88,7 @@ require("./routes/user-api-routes.js")(app);
 // require('./app/config/passport/passport.js')(passport, models.user);
 require('./config/passport/passport.js')(passport, models.user);
 
-app.listen(8080, function(err) {
+app.listen(PORT, function(err) {
     if (!err)
         console.log("Site is live");
     else console.log(err)
