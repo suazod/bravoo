@@ -13,10 +13,10 @@
 	<div class="row expanded app-dashboard-top-nav-bar">
 		<div class="columns medium-2">
 			<button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
-			<span  class="app-dashboard-logo">Hello, Guardian!</span>
+			<span  class="app-dashboard-logo">Hello, Student!</span>
 		</div>
 		<div class="columns shrink app-dashboard-top-bar-actions">
-			<a href="/logout" class="button login-btm back-to-home"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a><a style="margin-left: 15px;color: #fff;text-align: right;width: 85%;position: relative;" href="/student" class=" back-to-home"><i class="fa fa-graduation-cap" aria-hidden="true"></i>  Student Dashboard</a>
+			<a href="/logout" class="button login-btm back-to-home"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a><a style="margin-left: 15px;color: #fff;text-align: right;width: 85%;position: relative;" href="/dashboard" class=" back-to-home"><i class="fa fa-user-circle" aria-hidden="true"></i> Main Dashboard</a>
 		</div>
 	</div>
 
@@ -60,7 +60,7 @@
 			<div class="row">
         <!-- top assignment inputs -->
 				<div class="large-12 columns">
-					<h3 class="text-center dashboard-title">Guardian Dashboard</h3>
+					<h3 class="text-center dashboard-title">Student Dashboard</h3>
 					<div class="list-group-item new-item">
 						<form id="todo-form">
 							<div class="row">
@@ -70,8 +70,6 @@
 								<div class="large-5 columns">
 									<button type="submit" class="success button btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i>
  Add Assignment</button>
-									<button type="button" class="btm-reminder success hollow button"><i class="fa fa-paper-plane" aria-hidden="true"></i>
- Hey Bravoo!</button>
 									<button type="button" onclick="sendTextMessage()" class="btm-reminder success hollow button"><i class="fa fa-paper-plane" aria-hidden="true"></i>
  Send reminder</button>
 								</div>
@@ -91,19 +89,19 @@
 
 				<div class="status-container">
 				    <input type="radio" class="radio" name="progress" value="five" id="five">
-				    <label for="five" class="label">5%</label>
+				    <!-- <label for="five" class="label">5%</label> -->
 
 				    <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
-				    <label for="twentyfive" class="label">25%</label>
+				    <!-- <label for="twentyfive" class="label">25%</label> -->
 
 				    <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
-				    <label for="fifty" class="label">50%</label>
+				    <!-- <label for="fifty" class="label">50%</label> -->
 
 				    <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive">
-				    <label for="seventyfive" class="label">75%</label>
+				    <!-- <label for="seventyfive" class="label">75%</label> -->
 
 				    <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
-				    <label for="onehundred" data-open="exampleModal1" class="label">Bravoo!</label>
+				    <!-- <label for="onehundred" data-open="exampleModal1"class="label">Bravoo!</label> -->
 
 				    <div class="progress">
 				      <div class="progress-bar"></div>
@@ -138,6 +136,11 @@
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
+</div>
+
+<!-- floating austronaut -->
+<div class="aus-home">
+  <img src="/assets/img/aust.png" alt="aust.png" width="130"/>
 </div>
 
 

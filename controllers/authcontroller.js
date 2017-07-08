@@ -6,6 +6,12 @@ exports.main = function(req, res) {
 
 }
 
+exports.student = function(req, res) {
+
+    res.render('student');
+
+}
+
 exports.signup = function(req, res) {
 
     res.render('signup');

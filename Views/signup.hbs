@@ -19,22 +19,35 @@
 
     <h2 class="text-center">Register</h2>
     <div class="container form-wrapper">
-    	<div class="row large-4 large-centered columns">
+    	<div class="row large-8 large-centered columns">
     		<form action="/signup" class="log-in-form" id="signup" method="post" name="signup">
     			<div class="row">
     				<div class="large-12 large-centered columns">
-    					<fieldset class="fieldset">
-    						<legend>Guardian Information</legend> <label for="firstname">First Name
-                  <input id="name" name="firstname" placeholder="First Name" type="text"></label>
-                  <label for="lastname">Last Name
+              <h4 class="text-center">Bravoo! Please enter basic information</h4>
+                <div class="row">
+                    <div class="large-6 columns">
+                      <label for="firstname">First Name
+                      <input id="name" name="firstname" placeholder="First Name" type="text"></label>
+                    </div>
+
+                    <div class="large-6 columns">
+                    <label for="lastname">Last Name
                     <input id="name" name="lastname" placeholder="Last Name" type="text"></label>
-                  <label for="email">Email
-                  <input id="email" name="email" placeholder="somebody@example.com" type="email"></label>
-                  <label for="phone">Phone number
-                  <input id="phone" name="phone" placeholder="Phone number" type="text"></label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="large-6 columns">
+                      <label for="email">Email
+                      <input id="email" name="email" placeholder="somebody@example.com" type="email"></label>
+                    </div>
+                <div class="large-6 columns">
+                  <label for="phone">Phone
+                  <input id="phoneNumberField" name="phone" placeholder="Phone number" type="text"></label>
+                </div>
+                </div>
                   <label for="password">Create Password
-                    <input id="password" name="password" placeholder="New Password" type="password"></label>
-    					</fieldset>
+                  <input id="password" name="password" placeholder="New Password" type="password"></label>
     				</div>
     				<!--div class="large-6 columns">
     					<fieldset class="fieldset">
@@ -57,5 +70,4 @@
       <img src="/assets/img/aust.png" alt="aust.png" width="130"/>
     </div>
 </body>
-
 </html>

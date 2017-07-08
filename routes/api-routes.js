@@ -8,6 +8,8 @@
 // Requiring our models
 var db = require("../models");
 
+
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -15,25 +17,47 @@ module.exports = function(app) {
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Todo.findAll({}).then(function(dbTodo) {
-      // We have access to the todos as an argument inside of the callback function
-      res.json(dbTodo);
-    });
-  });
-
-  // POST route for saving a new todo
-  app.post("/api/todos", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property
-    db.Todo.create({
-      text: req.body.text,
-      complete: req.body.complete
+    var query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Todo.findAll({
+    where: query
     }).then(function(dbTodo) {
-      // We have access to the new todo as an argument inside of the callback function
       res.json(dbTodo);
-    });
+});
+});
+
+// Get rotue for retrieving a single post
+app.get("/api/todos/:id", function(req, res) {
+  // Here we add an "include" property to our options in our findOne query
+  // We set the value to an array of the models we want to include in a left outer join
+  // In this case, just db.Author
+  db.Todo.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.User]
+  }).then(function(dbTodo) {
+    res.json(dbTodo);
   });
+});
+
+app.post("/api/todos", function(req, res) {
+  // create takes an argument of an object describing the item we want to
+  // insert into our table. In this case we just we pass in an object with a text
+  // and complete property
+  db.Todo.create({
+    text: req.body.text,
+    complete: req.body.complete
+  }).then(function(dbTodo) {
+    // We have access to the new todo as an argument inside of the callback function
+    res.json(dbTodo);
+  });
+});
 
   // DELETE route for deleting todos. We can get the id of the todo to be deleted from
   // req.params.id
@@ -46,8 +70,7 @@ module.exports = function(app) {
     }).then(function(dbTodo) {
       res.json(dbTodo);
     });
-
-  });
+});
 
   // PUT route for updating todos. We can get the updated todo data from req.body
   app.put("/api/todos", function(req, res) {

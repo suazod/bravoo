@@ -132,6 +132,10 @@ $(document).ready(function() {
     var newTodoSpan = $("<span>");
     newTodoSpan.text(todo.text);
     newInputRow.append(newTodoSpan);
+    var newTask = $("<span>");
+    newTask.text('Homework');
+    newTask.addClass('homework');
+    newInputRow.append(newTask);
     var newTodoInput = $("<input>");
     newTodoInput.attr("type", "text");
     newTodoInput.addClass("edit");
@@ -150,6 +154,9 @@ $(document).ready(function() {
     newInputRow.data("todo", todo);
     if (todo.complete) {
       newTodoSpan.css("text-decoration", "line-through");
+      newTask.toggleClass('shake');
+      newTask.text('Bravoo! Completed');
+      newInputRow.toggleClass('task-completed');
     }
     return newInputRow;
   }

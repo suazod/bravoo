@@ -9,6 +9,23 @@ var path = require("path");
 var models = require("./models");
 var exphbs = require('express-handlebars');
 
+var twilio = require('twilio');
+
+// var accountSid = '';
+// var authToken = '';
+// var client = require('twilio')(accountSid, authToken);
+//
+// client.messages.create({
+//   from: '',
+//   to: '',
+//   body: "You just sent an SMS from Node.js using Twilio!"
+// }, function(err, message) {
+//   if(err) {
+//     console.error(err.message);
+//   }
+// });
+
+
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -63,6 +80,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
 
 //load passport strategies
 // require('./app/config/passport/passport.js')(passport, models.user);

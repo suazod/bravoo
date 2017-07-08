@@ -240,6 +240,11 @@ ul.menu.vertical > li > a:hover .fa  {
   background-color: #0572E3;
 }
 
+#popupp {
+font-size: 22px;
+text-align: center;
+color: #333;
+}
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .app-dashboard.shrink-medium .app-dashboard-close-sidebar, .app-dashboard.shrink-medium .app-dashboard-sidebar-text {
