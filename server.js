@@ -11,6 +11,8 @@ var exphbs = require('express-handlebars');
 
 var twilio = require('twilio');
 
+var port = process.env.PORT || 3000; 
+
 // var accountSid = '';
 // var authToken = '';
 // var client = require('twilio')(accountSid, authToken);
