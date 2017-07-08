@@ -11,7 +11,7 @@ var exphbs = require('express-handlebars');
 
 var twilio = require('twilio');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 // var accountSid = '';
 // var authToken = '';
@@ -88,8 +88,8 @@ require("./routes/user-api-routes.js")(app);
 // require('./app/config/passport/passport.js')(passport, models.user);
 require('./config/passport/passport.js')(passport, models.user);
 
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+app.listen(8080, function(err) {
+    if (!err)
+        console.log("Site is live");
+    else console.log(err)
 });
